@@ -18,6 +18,6 @@ deployment:
     branch: master
     commands:
       - gradle build && cp -R build/libs $CIRCLE_ARTIFACTS
-      - docker build -t "spike234/CloudDemoConfig:$CIRCLE_BUILD_NUM" .
+      - docker build -t "spike234/cloud-demo-config:$CIRCLE_BUILD_NUM" .
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push "spike234/CloudDemoConfig:$CIRCLE_BUILD_NUM"
+      - docker push "spike234/cloud-demo-config:$CIRCLE_BUILD_NUM"
